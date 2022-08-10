@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>HR ANALYTICS PREDICTION</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="./static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="./static/css2/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+
+<body>
+  <nav class="blue lighten-2" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Do you want to know the employee will stay/leave?</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Return to home</a></li>
+      </ul>
+
+  </nav>
+
+
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+     <h5 style="text-align: center; color: brown; font-weight: 600;">{{pred}}</h5>
+      <h1 class="header center black-text">HR ANALYTICS (using AI in the background)</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">Predict the probability that employee got promoted
+        <br>
+        </h5>
+      </div>
+
+
+      <div class="row">
+        <form action='/predict' method="post" class="col s12">
+            <div class="row">
+                <div class="input-field col s4">
+                    <label for="first_name"><b>department</b></label>
+                    <br>
+                    <input placeholder="Department" type="text"" name="1" id="first_name" type="text" class="validate">
+                </div>
+                <div class="input-field col s4">
+                    <label for="last_name"><b>region</b></label>
+                    <br>
+                    <input id="last_name" name="2" placeholder="Region"  type="text" class="validate">
+    
+                </div>
+    
+                <div class="input-field col s4">
+                    <label for="_name"><b>education</b></label>
+                    <br>
+                    <input id="_name" name="3" placeholder="Education" type="text" class="validate">
+    
+                </div>
+                <div class="input-field col s4">
+                    <label for="first_name"><b>gender</b></label>
+                    <br>
+                    <input placeholder="Gender" name="4" id="first_name" type="text" class="validate">
+                </div>
+                <div class="input-field col s4">
+                    <label for="last_name"><b>recruitment_channel </b></label>
+                    <br>
+                    <input id="last_name" name="5" placeholder="Recruitment_channel" type=""  type="text" class="validate">
+                </div>
+                <div class="input-field col s4">
+                  <label ><b>no_of_trainings</b></label>
+                  <br>
+                  <input name = '6' placeholder="no_of_trainings">
+
+                </div>
+                <div class="input-field col s4">
+                    <label for="last_name"><b>age</b></label>
+                    <br>
+                    <input id="last_name" name="7" placeholder="age"  type="text" class="validate">
+                </div>
+                <div class="input-field col s4">
+                    <label for="_name"><b>previous_year_rating</b></label>
+                    <br>
+                    <input id="_name" name="8" placeholder="previous_year_rating" type="text" class="validate">
+                </div>
+                <div class="input-field col s4">
+                    <label for="_name"><b>length_of_service</b></label>
+                    <br>
+                    <input id="_name" name="9" placeholder="length_of_service" type="text" class="validate">
+                </div>
+                <div class="input-field col s4">
+                    <label for="_name"><b>KPIs_met >80%</b></label>
+                    <br>
+                    <input id="_name" name="10" placeholder="KPIs_met >80%" type="text" class="validate">
+                </div>
+                <div class="input-field col s4">
+                    <label for="_name"><b>awards_won?</b></label>
+                    <br>
+                    <input id="_name" name="11" placeholder="awards_won?" type="text" class="validate">
+                </div>
+                <div class="input-field col s4">
+                    <label for="_name"><b>avg_training_score</b></label>
+                    <br>
+                    <input id="_name" name="12" placeholder="avg_training_score" type="text" class="validate">
+                </div>
+    
+          </div>
+    
+          <div class="row center">
+    
+              <button type="submit" class="btn-large waves-effect waves-light light-blue">Submit and predict probability</button>
+
+          </div>
+        </form>
+  </div>
+
+      <br>
+
+     
+    <br><br>
+  </div>
+  </div>>
+
+  <footer class="page-footer blue lighten-2" style="position: fixed;left: 0;bottom: 0; width: 100%;">
+    <div class="footer-copyright blue lighten-2">
+      <div class="container" style="padding-bottom: 1rem; position: fixed; font-size: 1.2rem; margin-left: 5rem;">
+        <p>&copy; Muhammed Salih</p>
+        <p>msalihk1@gmail.com</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src=".js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
+</html>
+
