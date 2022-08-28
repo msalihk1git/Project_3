@@ -1,137 +1,349 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-  <title>HR ANALYTICS PREDICTION</title>
 
-  <!-- CSS  -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="./static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="./static/css2/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR Analytics Prediction</title>
+
+
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+    <!-- css -->
+    <link rel="stylesheet" href="static/css/styles.css">
+
+
 </head>
 
 <body>
-  <nav class="blue lighten-2" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Do you want to know the employee will stay/leave?</a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="#">Return to home</a></li>
-      </ul>
 
-  </nav>
+    <!-- As a heading -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">HR Analytics</a>
+            </div>
+        </div>
+    </nav>
+
+    <br><br><br>
 
 
-  <div class="section no-pad-bot" id="index-banner">
     <div class="container">
-     <h5 style="text-align: center; color: brown; font-weight: 600;">{{pred}}</h5>
-      <h1 class="header center black-text">HR ANALYTICS (using AI in the background)</h1>
-      <div class="row center">
-        <h5 class="header col s12 light">Predict the probability that employee got promoted
-        <br>
-        </h5>
-      </div>
 
 
-      <div class="row">
-        <form action='/predict' method="post" class="col s12">
+
+        <form action="\predict" method="post">
+
+
             <div class="row">
-                <div class="input-field col s4">
-                    <label for="first_name"><b>department</b></label>
-                    <br>
-                    <input placeholder="Department" type="text"" name="1" id="first_name" type="text" class="validate">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Department -->
+                            <h5 class="card-title">Department</h5>
+                            <select name="Department" id="Department" required="required">
+                                <option value="Sales & Marketing">Sales & Marketing</option>
+                                <option value="Operations">Operations</option>
+                                <option value="Technology">Technology</option>
+                                <option value="Analytics">Analytics</option>
+                                <option value="R&D">R&D</option>
+                                <option value="Procurement">Procurement</option>
+                                <option value="Finance">Finance</option>
+                                <option value="HR">HR</option>
+                                <option value="Legal">Legal</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
-                <div class="input-field col s4">
-                    <label for="last_name"><b>region</b></label>
-                    <br>
-                    <input id="last_name" name="2" placeholder="Region"  type="text" class="validate">
-    
+                <br>
+                <br>
+                <br>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Region -->
+                            <h5 class="card-title">Region</h5>
+                            <select name="Region" id="Region" required="required">
+                                <option value="Region_1">Region_1</option>
+                                <option value="Region_2">Region_2</option>
+                                <option value="Region_3">Region_3</option>
+                                <option value="Region-4">Region-4</option>
+                                <option value="Region_5">Region_5</option>
+                                <option value="Region_6">Region_6</option>
+                                <option value="Region_7">Region_7</option>
+                                <option value="Region_8">Region_8</option>
+                                <option value="Region_9">Region_9</option>
+                                <option value="Region_10">Region_10</option>
+                                <option value="Region_11">Region_11</option>
+                                <option value="Region_12">Region_12</option>
+                                <option value="Region-13">Region-13</option>
+                                <option value="Region_14">Region_14</option>
+                                <option value="Region_15">Region_15</option>
+                                <option value="Region_16">Region_16</option>
+                                <option value="Region_17">Region_17</option>
+                                <option value="Region_18">Region_18</option>
+                                <option value="Region_19">Region_19</option>
+                                <option value="Region_20">Region_20</option>
+                                <option value="Region_21">Region_21</option>
+                                <option value="Region-22">Region-22</option>
+                                <option value="Region_23">Region_23</option>
+                                <option value="Region_24">Region_24</option>
+                                <option value="Region_25">Region_25</option>
+                                <option value="Region_26">Region_26</option>
+                                <option value="Region_27">Region_27</option>
+                                <option value="Region_28">Region_28</option>
+                                <option value="Region_29">Region_29</option>
+                                <option value="Region_30">Region_30</option>
+                                <option value="Region-31">Region-31</option>
+                                <option value="Region_32">Region_32</option>
+                                <option value="Region_33">Region_33</option>
+                                <option value="Region_34">Region_34</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
-    
-                <div class="input-field col s4">
-                    <label for="_name"><b>education</b></label>
-                    <br>
-                    <input id="_name" name="3" placeholder="Education" type="text" class="validate">
-    
-                </div>
-                <div class="input-field col s4">
-                    <label for="first_name"><b>gender</b></label>
-                    <br>
-                    <input placeholder="Gender" name="4" id="first_name" type="text" class="validate">
-                </div>
-                <div class="input-field col s4">
-                    <label for="last_name"><b>recruitment_channel </b></label>
-                    <br>
-                    <input id="last_name" name="5" placeholder="Recruitment_channel" type=""  type="text" class="validate">
-                </div>
-                <div class="input-field col s4">
-                  <label ><b>no_of_trainings</b></label>
-                  <br>
-                  <input name = '6' placeholder="no_of_trainings">
+            </div>
 
-                </div>
-                <div class="input-field col s4">
-                    <label for="last_name"><b>age</b></label>
-                    <br>
-                    <input id="last_name" name="7" placeholder="age"  type="text" class="validate">
-                </div>
-                <div class="input-field col s4">
-                    <label for="_name"><b>previous_year_rating</b></label>
-                    <br>
-                    <input id="_name" name="8" placeholder="previous_year_rating" type="text" class="validate">
-                </div>
-                <div class="input-field col s4">
-                    <label for="_name"><b>length_of_service</b></label>
-                    <br>
-                    <input id="_name" name="9" placeholder="length_of_service" type="text" class="validate">
-                </div>
-                <div class="input-field col s4">
-                    <label for="_name"><b>KPIs_met >80%</b></label>
-                    <br>
-                    <input id="_name" name="10" placeholder="KPIs_met >80%" type="text" class="validate">
-                </div>
-                <div class="input-field col s4">
-                    <label for="_name"><b>awards_won?</b></label>
-                    <br>
-                    <input id="_name" name="11" placeholder="awards_won?" type="text" class="validate">
-                </div>
-                <div class="input-field col s4">
-                    <label for="_name"><b>avg_training_score</b></label>
-                    <br>
-                    <input id="_name" name="12" placeholder="avg_training_score" type="text" class="validate">
-                </div>
-    
-          </div>
-    
-          <div class="row center">
-    
-              <button type="submit" class="btn-large waves-effect waves-light light-blue">Submit and predict probability</button>
+            <br>
+            <br>
+            <br>
 
-          </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Education -->
+                            <h5 class="card-title">Education</h5>
+                            <select name="Education" id="Education" required="required">
+                                <option value="Master's & above">Master's & above</option>
+                                <option value="Bachelor's">Bachelor's</option>
+                                <option value="Below Secondary">Below Secondary</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                             <!-- Gender -->
+                            <h5 class="card-title">Gender</h5>
+                            <select name="Gender" id="Gender" required="required">
+                                <option value="female">Female</option>
+                                <option value="Male">Male</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <br>
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Recruitment Channel -->
+                            <h5 class="card-title">Recruitment Channel</h5>
+                            <select name="Recruitment Channel" required="required">
+                                <option value="sourcing">sourcing</option>
+                                <option value="other">other</option>
+                                <option value="referred">referred</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Number of Trainings -->
+                            <h5 class="card-title">Number of Trainings</h5>
+                            <select name="Number of Trainings" id="Number of Trainings" required="required">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <br>
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Age -->
+                            <h5 class="card-title">Age</h5>
+                            <input name="age" id="age" required="required">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Previous Year Rating</h5>
+                            <!-- Previous Year Rating -->
+                            <select name="previous_year_rating" id="previous_year_rating" required="required">
+                                <option value="1">1.0</option>
+                                <option value="2">2.0</option>
+                                <option value="3">3.0</option>
+                                <option value="4">4.0</option>
+                                <option value="5">5.0</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <br>
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- lenght of service -->
+                            <h5 class="card-title">length_of_service</h5>
+                            <select name="length_of_service" id="length_of_service" required="required">
+                                <option value="1.0">1.0</option>
+                                <option value="2.0">2.0</option>
+                                <option value="3.0">3.0</option>
+                                <option value="4.0">4.0</option>
+                                <option value="5.0">5.0</option>
+                                <option value="6.0">6.0</option>
+                                <option value="7.0">7.0</option>
+                                <option value="8.0">8.0</option>
+                                <option value="9.0">9.0</option>
+                                <option value="10.0">10.0</option>
+                                <option value="11.0">11.0</option>
+                                <option value="12.0">12.0</option>
+                                <option value="13.0">13.0</option>
+                                <option value="14.0">14.0</option>
+                                <option value="15.0">15.0</option>
+                                <option value="16.0">16.0</option>
+                                <option value="17.0">17.0</option>
+                                <option value="18.0">18.0</option>
+                                <option value="19.0">19.0</option>
+                                <option value="20.0">20.0</option>
+                                <option value="21.0">21.0</option>
+                                <option value="22.0">22.0</option>
+                                <option value="23.0">23.0</option>
+                                <option value="24.0">24.0</option>
+                                <option value="25.0">25.0</option>
+                                <option value="26.0">26.0</option>
+                                <option value="27.0">27.0</option>
+                                <option value="28.0">28.0</option>
+                                <option value="29.0">29.0</option>
+                                <option value="30.0">30.0</option>
+                                <option value="31.0">31.0</option>
+                                <option value="32.0">32.0</option>
+                                <option value="33.0">33.0</option>
+                                <option value="34.0">34.0</option>
+                                <option value="37.0">37.0</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">KPIs_met_above_80_percent</h5>
+                            <!-- KPIs_met >80% -->
+                            <select name="KPIs_met_above_80_percent" id="KPIs_met_above_80_percent" required="required">
+                                <option value="1">1</option>
+                                <option value="0">0</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <br>
+            <br>
+            <br>
+            
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- awards_won? -->
+                            <h5 class="card-title">Awards Won?</h5>
+                            <select name="awards_won" id="awards_won" required="required">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- avg_training_score -->
+                            <h5 class="card-title">average Training Score</h5>
+                            <input name="avg_training_score" required="required">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <br>
+            <br>
+            <br>
+
+            <!-- Submit -->
+            <input type="submit" value="Submit" class="btn btn-secondary">
         </form>
-  </div>
 
-      <br>
+        <br>
+        <br>
+        <h3>{{ prediction_text }}</h3>
 
-     
-    <br><br>
-  </div>
-  </div>>
+        <br>
+        <br>
+        <p>©2022 Muhammed Salih K</p>
 
-  <footer class="page-footer blue lighten-2" style="position: fixed;left: 0;bottom: 0; width: 100%;">
-    <div class="footer-copyright blue lighten-2">
-      <div class="container" style="padding-bottom: 1rem; position: fixed; font-size: 1.2rem; margin-left: 5rem;">
-        <p>&copy; Muhammed Salih</p>
-        <p>msalihk1@gmail.com</p>
-      </div>
     </div>
-  </footer>
 
 
-  <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src=".js/materialize.js"></script>
-  <script src="js/init.js"></script>
 
-  </body>
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+</body>
+
 </html>
-
